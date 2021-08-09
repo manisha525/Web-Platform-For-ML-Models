@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="{{ url_for('static' , filename='favicon.png') }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  
+</head>
+<body style="Background-image:url({{url_for('static' , filename='40.jpg')}})">
+
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item dropdown" >
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Choose a Model
+        </a>
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item bg-dark text-white" href="/forest">Forest Fire Prediction</a>
+          <a class="dropdown-item bg-dark text-white" href="/iris">Iris Flower Classification</a>
+          <a class="dropdown-item bg-dark text-white" href="/glass">Glass Type Identification</a>
+          <a class="dropdown-item bg-dark text-white" href="/diabetes">Diabetes Prediction</a>
+          <a class="dropdown-item bg-dark text-white" href="/heart">Heart Disease Prediction</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link active" href="/about">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class= "container" style="margin-top:20px"> 
+   
+  <h3><u>Forest Fire Prediction</u>:</h3>
+    <p>Nowadays, forest fires has become one of the foremost important problems that cause damage to several areas around the world.
+      This App displays Machine Learning Technique for predicting Forest Fire Probability.
+      Parameters that influence forest fire are: <b>Teperature</b>, <b>Oxygen</b> and <b>Humidity</b>.</p>
+      <ul>
+      <li> Temperature has a direct influence on fire behavior because of the heat requirements for ignition and continuing the combustion process.</li>
+      <li> When the Relative Humidity drops, fire behavior increases</li>
+      <li> Greater the amount of Oxygen in the atmosphere, Higher the chance of fire occurrence.</li>
+      </ul>
+  <hr>
+  
+  <h3><u>Iris Flower Classification</u>:</h3>
+  <p>The data set contains 3 classes of 50 instances each, where each class refers to a type of iris plant.</p>
+  <p>The 3 species of Iris being:</p>
+  <img src="{{url_for('static', filename='iris1.png')}}" />
+<br>
+<hr>
+
+  <h3><u> Glass Type Identification</u>:</h3>
+  <p>The study of classification of types of glass was motivated by criminological investigation.</p>
+  <b>Attribute Information:</b>
+  <ul>
+  <li>RI: refractive index</li>
+  <li>Na: Sodium (unit measurement: weight percent in corresponding oxide, as are attributes 4-10)</li>
+  <li>Mg: Magnesium</li>
+  <li>Al: Aluminum</li>
+  <li>Si: Silicon</li>
+  <li>K: Potassium</li>
+  <li>Ca: Calcium</li>
+  <li>Ba: Barium</li>
+  <li>Fe: Iron</li>
+  </ul>
+    <b>Type of Glasses:</b>
+      <ul>
+        <li> Type 1: building_windows_float_processed </li> 
+        <li> Type 2: building_windows_non_float_processed </li>
+        <li> Type 3: vehicle_windows_float_processed </li>
+        <li> Type 4: vehicle_windows_non_float_processed </li>
+        <li> Type 5: containers </li>
+        <li> Type 6: tableware </li>
+        <li> Type 7: headlamps </li>
+      </ul>
+  <hr>  
+
+  <h3><u>Diabetes Prediction</u>: </h3>
+  <p> Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high. Blood glucose is your main source of energy and comes from the food you eat.
+  <br>Insulin, a hormone made by the pancreas, helps glucose from food get into your cells to be used for energy.
+  <br>The objective of the dataset is to diagnostically predict whether or not a patient has diabetes, based on certain diagnostic measurements included in the dataset.
+  <br>Several constraints were placed on the selection of these instances from a larger database.</p><br>
+  <b>Attribute Information:</b>
+  <ul>
+  <li>Pregnancies</li>
+  <li>Glucose</li>
+  <li>BloodPressure</li>
+  <li>SkinThickness</li>
+  <li>Insulin</li>
+  <li>BMI</li>
+  <li>DiabetesPedigreeFunction</li>
+  <li>Age</li>
+  </ul>
+ <hr>
+ 
+ <h3><u>Heart Disease Prediction</u>: </h3>
+<p>Heart disease describes a range of conditions that affect your heart.<br>
+11 attributes has been used out of 76 attributes of Heart Disease UCI dataset.<br></p>
+<b>Attribute Information:</b>
+<ol>
+<li>Age</li>
+<li>Sex</li>
+<li>Chest Pain:- a) Typical angina (Typical symptoms usually include chest, arm, or jaw pain described as dull, heavy, tight, or crushing.
+                    <br>b) Atypical angina (Atypical pain is frequently defined as epigastric or back pain or pain that is described as burning, stabbing, or characteristic of indigestion. )
+                    <br>c) Non-anginal Pain (The pain typically is felt behind the breast bone (sternum) and is described as oppressive, squeezing or pressure-like.)
+                    <br>d) Asymptomatic (without any symptoms)</li>
+<li>Trestbps(resting blood pressure)  :-  normal Blood Pressure</li>
+<li>Serum cholestoral</li>
+<li>Restecg(resting electrocardiogram) :- normal ecg (simple quick painless)</li>
+<li>Thalach(max heart rate achieved) :- Exercise heart rate (220-age)</li>
+<li>Exang(exercise angina) :- chest pain due to exercise, climbing stairs or walking.</li>
+<li>Oldpeak:- ST depression due to exercise</li>
+<li>Slope: the slope of the peak exercise ST segment(The J point (the point of inflection at the junction of the S wave and ST segment) becomes depressed during exercise, with maximum depression at peak exercise.
+The normal ST segment during exercise therefore slopes sharply upwards.)</li>
+<li>Thal: Thalassemia is an inherited blood disorder that causes your body to have less hemoglobin than normal.</li>
+</ol>
+</div>
+
+
+<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; 2021 MultiFactorPrediction</small>
+    </div>
+  </footer>
+
+</body>
+</html>
+

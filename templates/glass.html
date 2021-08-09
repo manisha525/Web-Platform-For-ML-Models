@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Predict Glass Type</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="{{ url_for('static' , filename='favicon.png') }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  
+</head>
+<body style="Background-image:url({{url_for('static' , filename='40.jpg')}})">
+
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item dropdown" >
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Choose a Model
+        </a>
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item bg-dark text-white" href="/forest">Forest Fire Prediction</a>
+          <a class="dropdown-item bg-dark text-white" href="/iris">Iris Flower Classification</a>
+          <a class="dropdown-item bg-dark text-white" href="/glass">Glass Type Identification</a>
+          <a class="dropdown-item bg-dark text-white" href="/diabetes">Diabetes Prediction</a>
+          <a class="dropdown-item bg-dark text-white" href="/heart">Heart Disease Prediction</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid",class="form-group" style="margin-bottom:15px;margin-top:20px">
+  <h2>Details of the Glass: </h2>
+<h3>Enter the Following parameters :</h3>
+<form action="/result" method="POST">
+<table class="table table-striped  table-hover table-bordered">
+<thead>
+  <tr>
+    <th>Parameters</th>
+    <th>Values</th>
+    <th>Examples</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td for="ri">Refractive Index  </td>
+    <td><input class="form-control" placeholder="Refractive Index" type="text" id="ri" name="ri" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+    <td>Should be a rational number,e.g., 1.52011,1.5301 etc.</td>
+  </tr>      
+  <tr>
+    <td for="na">Sodium  </td>
+    <td> <input class="form-control" placeholder="Weight Percent" type="text" id="na" name="na" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+    <td>Should be a rational number,e.g., 10.7,17.4 etc.</td>
+  </tr>
+  <tr>
+    <td for="mg">Magnesium  </td>
+    <td><input class="form-control" placeholder="Weight Percent" type="text" id="mg" name="mg" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+    <td>Should be a rational number,e.g., 0,4.49 etc.</td>
+  </tr>
+  <tr>
+    <td for="al">Aluminum </td>
+    <td><input class="form-control" placeholder="Weight Percent" type="text" id="al" name="al" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+    <td>Should be a rational number,e.g., 0.29,3.5 etc.</td>
+  </tr>
+  <tr>
+    <td for="si">Silicon </td>
+    <td><input class="form-control" placeholder="Weight Percent" type="text" id="si" name="si" pattern="[+-]?([0-9]*[.])?[0-9]+"  required></td>
+    <td>Should be a rational number,e.g., 69.8, 75.4 etc.</td>
+  </tr>
+  <tr>
+    <td for="k">Potassium </label></td>
+    <td>  <input class="form-control" placeholder="Weight Percent" type="text" id="k" name="k" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+    <td>Should be a rational number,e.g., 0,6.21 etc.</td>
+  </tr>
+  <tr>
+    <td for="ca">Calcium </td>
+    <td> <input class="form-control" placeholder="Weight Percent" type="text" id="ca" name="ca" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+    <td>Should be a rational number,e.g., 5.43,16.2 etc.</td>
+  </tr>
+  <tr>
+    <td for="Ba">Barium </td>
+    <td>  <input class="form-control" placeholder="Weight Percent" type="text" id="ba" name="ba" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+    <td>Should be a rational number,e.g., 0,3.15 etc.</td>
+  </tr>
+  <tr>
+    <td for="fe">Iron </td>
+    <td> <input class="form-control" placeholder="Weight Percent" type="text" id="fe" name="fe" pattern="[+-]?([0-9]*[.])?[0-9]+" required></td>
+    <td>Should be a rational number,e.g., 0,0.51 etc.</td>
+  </tr>
+  
+</tbody>
+</table> 
+<button class="btn btn-success" type="submit">Submit</button>
+</form>
+<hr/>
+</div>
+
+ 
+
+<footer class="py-4 bg-dark text-white-50">
+  <div class="container text-center">
+    <small>Copyright &copy; 2021 MultiFactorPrediction</small>
+  </div>
+</footer>
+
+</body>
+</html>
